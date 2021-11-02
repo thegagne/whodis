@@ -1,0 +1,10 @@
+name = "whodis"
+type = "webpack"
+route = ''
+zone_id = ''
+usage_model = ''
+compatibility_flags = []
+workers_dev = true
+account_id = "2744d879903480d9b1c3091cc0076197"
+site = {bucket = "./dist",entry-point = "workers-site"}
+compatibility_date = "2021-11-01"
