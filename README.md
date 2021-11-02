@@ -1,24 +1,13 @@
 # whodis
 
-## Project setup
-```
-npm install
-```
+## What is this?
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+It's a very fast way to look up domain info.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## What domain info?
 
-### Lints and fixes files
-```
-npm run lint
-```
+Mostly simple DNS info like NS, MX, TXT, but also cool stuff like ASN lookups.
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## How was this built?
+
+Cloudflare workers, Vue, and 1.1.1.1 DNS lookups!
