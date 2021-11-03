@@ -39,8 +39,13 @@ async function handleEvent(event) {
       domainInfo.a = await dnsLookup(domain, 'A')
       const ip = domainInfo.a.Answer[0].data
       const reverseIP = ip.split('.')[3] + '.' + ip.split('.')[2] + '.' + ip.split('.')[1] + '.' + ip.split('.')[0];
-      const reverseIPLookup = reverseIP.concat('.peer.asn.cymru.com')
+      const reverseIPLookup = reverseIP.concat('.origin.asn.cymru.com')
       domainInfo.asn = await dnsLookup(reverseIPLookup, 'txt')
+      let asn = domainInfo.asn.Answer[0].data.substring(1)
+
+      const asndescLookup = `AS${asn.split(' | ')[0]}.asn.cymru.com`
+      console.log(`asndesclookup: ${asndescLookup}`)
+      domainInfo.asndesc = await dnsLookup(asndescLookup, 'txt')
 
       return new Response(JSON.stringify(domainInfo), {
         headers: { 'content-type': 'application/json' }

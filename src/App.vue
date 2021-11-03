@@ -50,6 +50,7 @@
                 <v-card-text>
                   <ul>
                     <li v-for="answer in domainInfo.asn.Answer" :key="answer.data">{{answer.data}}</li>
+                    <li>{{domainInfo.asndesc.Answer[0].data}}
                   </ul>
                 </v-card-text>
               </v-card>
